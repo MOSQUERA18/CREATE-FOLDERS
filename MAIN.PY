@@ -1,7 +1,8 @@
 import os
 import pandas as pd
 import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import Label,filedialog, messagebox
+import tkinter.font as tkFont
 
 # Definir nombres de subcarpetas
 SUBCARPETAS = ["1.Planeación", "2.Ingreso", "3.Ejecución", "4.Certificación"]
@@ -68,6 +69,13 @@ root.resizable(False, False)
 # Crear botón para seleccionar archivo
 btn_seleccionar = tk.Button(root, text="Seleccionar archivo Excel", command=seleccionar_archivo, padx=10, pady=5)
 btn_seleccionar.pack(pady=50)
+font_footer = tkFont.Font(family="Arial", size=10, weight="bold")
+# 📌 Pie de página interactivo 📌
+footer = Label(root, text="Desarrollado por Marlon Mosquera ADSO 2671143", font=font_footer, 
+                   bg='#f4f4f9', fg='#555', cursor="hand2")
+footer.pack(side="bottom", pady=5)
+# Cambiar íconos
+root.iconbitmap("C:\\CREATE-FOLDERS\\carpeta.ico") 
 
 # Iniciar la aplicación
 root.mainloop()
